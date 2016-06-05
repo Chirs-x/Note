@@ -49,7 +49,7 @@ Laravel Facade 是一种为容器内部服务提供类型静态接口的类。�
 
 
 Facade 类中包含一个名为 `$app` 的私有属性，其值为服务容器的引用。
-\__callStatic魔术方法用于处理实际并不存在的静态方法的调用。因为 Facade 类并未实现该方法。因此，__callStatic 会从容器获取各自的服务，进而调用。
+\_\_callStatic魔术方法用于处理实际并不存在的静态方法的调用。因为 Facade 类并未实现该方法。因此，\_\_callStatic 会从容器获取各自的服务，进而调用。
 __callStatic 方法具体实现：
 
     --!文件位置 framework/src/Illuminate/Support/Facades/Facade.php
@@ -103,7 +103,7 @@ __callStatic 方法具体实现：
        return static::$resolvedInstance[$name] = static::$app[$name];
     }
 
-通过 __callStatic() 及 `static::` 后期静态帮定。实现了这个伪静态的调用。这也就明白了为什么可以这个调用DB::select()方法。
+通过 __callStatic() 及 `static::` 后期静态绑定。实现了这个伪静态的调用。这也就明白了为什么可以通过静态方法调用DB::select()。
 
 我们再回到第一种调用方式：
 
@@ -114,5 +114,9 @@ __callStatic 方法具体实现：
         return $this;
     }
 
-通过源码可以看出 select 是个可变参数函数，默认接受一个数组
+通过源码可以看出 select 是个可变参数函数，默认接收一个数组。
+
+## 总结
+通过对 select 的分解，我们也可知道其他 Facades 中方法的运作原理。
+
 
