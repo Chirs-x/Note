@@ -1,0 +1,31 @@
+1. 添加Yum源
+wget http://dev.mysql.com/get/mysql57-community-release-fc24-8.noarch.rpm
+其他发行版，参考 http://dev.mysql.com/downloads/repo/yum/
+
+2. 安装你下载的Yum源
+rpm -Uvh xxx.rpm
+
+3. 安装MySQL
+dnf -y install mysql-community-server
+
+4. 开启服务
+service mysqld start
+
+5.MySQL5.7第一次开启服务是，会执行以下动作
+
+* 服务器初始化
+* SSL证书和密钥文件生成在数据目录。
+* validata_password 插件安装并开启
+* 创建root账号，root账号的密码存放在日志文件中，运行以下命令查看
+* grep 'temporary password' /var/log/mysqld.log
+
+
+6. 修改字符集
+vim /etc/my.cnf
+添加以下内容：
+[client]
+default-character-set=utf8
+在[mysqld]容器末尾添加
+default-storage-engine=INNODB
+character-set-server=utf8
+collation-server=utf8_general_ci

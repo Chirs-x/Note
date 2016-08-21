@@ -1,0 +1,70 @@
+编译环境：
+gcc(GUN Compiler Collection)GUN编译器套件
+gcc-c++ c/c++
+autoconf
+automake
+libtool
+make 构建(build)工具
+cmake 跨平台的安装(编译)工作
+
+[root@localhost yum.repos.d]# vi /etc/yum.repos.d/CentOS-Base.repo
+
+[base] 容器名称，一定要放在[]中
+
+name容器说明，可以自己随便写
+
+mirrorlist镜像站点，这个可以注释掉
+
+baseurl我们的yum源服务器的地址。默认是CentOS官方的yum源服务器，是可以使用的，如果你觉得慢可以改成你喜欢的yum源地址
+
+enabled此容器是否生效，如果不写或写成enable=1都是生效，写成enable=0就是不生效
+
+gpgcheck如果是1是指RPM的数字证书生效，如果是0则不生效
+
+gpgkey数字证书的公钥文件保存位置。不用修改
+
+使用光盘yum源：
+1.先把Base改名
+2.修改Media 
+	baseurl 为file::///mnt/cdrom 光盘挂载点
+	enbaled=1
+
+
+RPM包安装位置：
+ /etc/		配置文件安装目录
+ /usr/bin/	可执行的命令安装目录
+ /usr/lib/	程序所使用的函数库保持位置
+ /usr/share/doc/基本的软件使用手册保持位置
+ /usr/share/man/帮助文件保存位置
+
+
+源码包安装位置:
+ /usr/local/软件名/
+
+网络命令：write  username
+	  wall(write all)
+	  mail  发送邮件
+	  last  查看用户登录
+	  lastlog  -u 最后一次登录
+	  tracerroute 显示数据包到主机间的路径
+	  netstat 网络状态 -t:TCP -u:UDP -l:监听 -r:路由 -n:显示IP地址和端口号
+		-tuln  -an -rn
+
+/etc/inittab  系统运行级别 runlevel 当前运行级别
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

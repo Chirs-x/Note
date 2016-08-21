@@ -1,0 +1,66 @@
+帮助类：
+	wehreis
+	whatis
+
+find ./ -name "*log" -exec rm {};
+	{}是一个特殊的字符串，对于每一个匹配的文件，{}会被替换成相应的文件名；
+cp -r|R
+wc -l 统计
+cat -n 给每项文件前面增加一个ID编号
+locate,与find不同，locate不是实时查找，需要更新数据库，以获取最新的文件索引信息(updatedb)
+chown 改变文件拥有者
+chmod u|g|o|a(all)
+  chome a+x filename
+
+Bash快捷删除
+ctrl+u 删除光标到行首的所有字符
+ctrl+w 删除当前光标第一个单词
+crtl+h 删除光标前的一个字符
+
+find . -regex  ".*\(\.txt|\.pdf\)$"
+	-atime
+	-mtime
+	-name
+	-type  f|d|l
+	-size +|-|=10M
+	-perm 权限
+	-user
+
+sort 排序
+	-n按数字进行排序
+	-d按字典进行排序
+	-r逆序
+	-k N 制定按第N列排序
+
+uniq消除重复行
+
+du -sh 递归整个目录所占空间的大小
+
+ps processes
+	-ef 正在进行的进程
+	-lu username 归属用户的进程
+	-ajx 完成格式显示所有进程
+
+pgrep 进程名 显示进程ID
+top 实时显示进程信息 P:CPU排序 M:内存
+lsof(list of file) -i:3306 查看作用进程的端口状态
+	-u username
+	-p 进程ID
+cat /proc/sys/fs/file-max 可以到开文件的句柄数
+
+查看CPU：grep "model name" /proc/cpuinfo
+查看内存: grep MemTotal /proc/meminfo
+查看开机时间：uptime
+
+
+
+
+
+
+
+
+
+
+
+
+
