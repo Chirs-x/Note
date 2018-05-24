@@ -29,3 +29,7 @@ default-character-set=utf8
 default-storage-engine=INNODB
 character-set-server=utf8
 collation-server=utf8_general_ci
+
+7. WIN7 及以上版本 my.ini文件的位置在 
+C:/ProgramData/MySQL/MySQL Server 5.5/Data/
+而且，Win7缺省是把C:/ProgramData目录隐藏的。
