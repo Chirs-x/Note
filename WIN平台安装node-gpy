@@ -1,0 +1,7 @@
+1. github:https://github.com/nodejs/node-gyp#installation
+2.执行node-gyp configure报错  https://cnodejs.org/topic/54250793076835ee28f3483c
+> 主要步骤：
+> a. 删除$HOME/.node-gpy  
+> b. 重新安装 npm i node-gpy -g
+> c. 删除安装但build失败的 node_modules
+> d. npm i -d
